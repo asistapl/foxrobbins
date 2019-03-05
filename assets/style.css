@@ -1,0 +1,313 @@
+@font-face {
+  font-family: RidleyGrotesk;
+  font-style: normal;
+  font-weight: 800;
+  src: url('RidleyGroteskExtraBold.woff2') format('woff2');
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  fill: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+svg {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: RidleyGrotesk, sans-serif;
+  color: #fff;
+  background-color: #282828;
+  fill: #fff;
+}
+
+.bg {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: 63% top;
+  /* transition: 2s opacity; */
+  animation: fadeIn 2s 0.5s forwards;
+  opacity: 0;
+}
+
+/* .bg:not(.is-loaded) {
+  opacity: 0;
+} */
+
+@keyframes fadeIn {
+  to {
+    opacity: var(--bg-opacity, 1);
+  }
+}
+
+@media (min-width: 600px) {
+  .bg {
+    object-position: center top;
+  }
+}
+
+.serif-font {
+  font-weight: 300;
+  font-family: source-serif-pro, serif;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.container {
+  width: 100%;
+  padding: 100px 20px;
+}
+
+@media (min-width: 350px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+@media (min-width: 350px) {
+  .logo {
+    left: 30px;
+  }
+}
+
+@media (min-width: 500px) {
+  .logo {
+    top: 40px;
+    left: 40px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .container {
+    padding-left: 9%;
+  }
+  .logo {
+    left: 9%;
+  }
+}
+
+.title {
+  display: inline;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+@media (min-width: 700px) {
+  .title {
+    font-size: 3.7vw;
+  }
+}
+
+.underline span {
+  position: relative;
+  z-index: 0;
+}
+
+.underline span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  bottom: 10%;
+  left: 0.05em;
+  right: 0.05em;
+  height: 17%;
+  background-image: linear-gradient(to right, #1682ca, #34aad4);
+  transition: 0.3s height, 1s opacity;
+}
+
+@media (max-width: 550px) {
+  .title br,
+  .title.underline span::after {
+    display: none;
+  }
+}
+
+.title.underline span::after {
+  opacity: 0;
+}
+
+.underline.showUnderline span::after {
+  opacity: 1;
+}
+
+.underline:hover span::after {
+  height: 40%;
+}
+
+@media (min-width: 700px) {
+  .underline--small span::after {
+    height: 30%;
+    bottom: 3%;
+  }
+
+  .underline--small:hover span::after {
+    height: 60%;
+  }
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@media (min-width: 450px) {
+  .paragraph {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 750px) {
+  .paragraph {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1367px) {
+  .paragraph {
+    font-size: 18px;
+  }
+}
+
+.bold-text {
+  margin: 0;
+  font-size: 16px;
+}
+
+.icon-link {
+  display: block;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  width: 24px;
+  margin-right: 25px;
+}
+
+@media (min-width: 600px) {
+  .icon {
+    opacity: 0.7;
+    transition: 0.2s;
+  }
+  .icon:hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  .icon {
+    width: 18px;
+    margin-right: 20px;
+  }
+}
+
+.hidden-on-mobile {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .hidden-on-mobile {
+    display: block;
+  }
+}
+
+.space {
+  width: 40px;
+  height: 40px;
+}
+
+.space--small {
+  width: 30px;
+  height: 30px;
+}
+
+.space--smallest {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 700px) {
+  body {
+    --bg-opacity: 0.5;
+  }
+}
+
+@media (min-width: 1100px) {
+  .paragraph {
+    max-width: 36em;
+  }
+}
+
+.bg {
+  object-position: 80% top;
+}
+
+.absolute-link {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+@media (min-width: 350px) {
+  .absolute-link {
+    right: 30px;
+  }
+}
+
+@media (min-width: 500px) {
+  .absolute-link {
+    right: 40px;
+    top: 40px;
+  }
+}
+
+@media (max-width: 340px) {
+  .bold-text,
+  .absolute-link {
+    font-size: 15px;
+  }
+}
